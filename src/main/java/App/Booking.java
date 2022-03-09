@@ -1,13 +1,11 @@
 package App;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Booking {
+
     private List<String> seats;
     private final Map<String, String> Booked_Seats = new HashMap<>();
 
@@ -48,12 +46,12 @@ public class Booking {
     }
 
     public List<String> getAvailableSeats() {
-        return seats.stream().filter(seat -> !seat.equals(""))
+        return seats.stream().filter(seat -> !seat.equals("R"))
                 .collect(Collectors.toList());
     }
 
     public Map<String, String> getBooked_Seats() {
         return new TreeMap<>(Booked_Seats);
-    }
+          }
 
 }
